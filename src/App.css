@@ -1,3 +1,17 @@
+@font-face {
+  font-family: "Cairo-Regular";
+  src: url("Assets/fonts/Cairo-Regular.ttf");
+}
+@font-face {
+  font-family: "Cairo-Bold";
+  src: url("Assets/fonts/Cairo-Bold.ttf");
+}
+@font-face {
+  font-family: "Cairo-Medium";
+  src: url("Assets/fonts/Cairo-Medium.ttf");
+}
+
 .App {
   text-align: center;
+  font-family: "Cairo-Bold";
 }
