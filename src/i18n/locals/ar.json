@@ -1,3 +1,7 @@
 {
-  "hello": "مرحبا"
+  "hello": "مرحبا",
+  "table.branch": "الفرع",
+  "table.date": "التاريخ",
+  "table.time": "الوقت",
+  "table.details": "التفاصيل"
 }
