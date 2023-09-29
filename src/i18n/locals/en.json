@@ -3,5 +3,13 @@
   "table.branch": "Branch",
   "table.date": "Date",
   "table.time": "Time",
-  "table.details": "Details"
+  "table.details": "Details",
+  "nav.bosta": "Bosta",
+  "nav.main": "Home",
+  "nav.sales": "Call Sales",
+  "nav.prices": "Pricing",
+  "nav.track": "Track Shipment",
+  "nav.signin": "Sign In",
+  "search.title": "Track your shipment",
+  "search.placeholder": "Tracking No."
 }

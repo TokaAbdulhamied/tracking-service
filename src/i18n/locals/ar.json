@@ -3,5 +3,13 @@
   "table.branch": "الفرع",
   "table.date": "التاريخ",
   "table.time": "الوقت",
-  "table.details": "التفاصيل"
+  "table.details": "التفاصيل",
+  "nav.bosta": "بوسطة",
+  "nav.main": "الرئيسية",
+  "nav.sales": "كلم المبيعات",
+  "nav.prices": "الاسعار",
+  "nav.track": "تتبع شحنتك",
+  "nav.signin": "تسجيل الدخول",
+  "search.title": "تتبع شحنتك",
+  "search.placeholder": "رقم التتبع"
 }
