@@ -8,7 +8,7 @@ import TableRow from "@mui/material/TableRow"
 import Paper from "@mui/material/Paper"
 import { useTranslation } from "react-i18next"
 import styled from "@emotion/styled"
-import "./CustomizedTable.css"
+import "./CustomeTable.css"
 function createData(
   name: string,
   calories: number,
@@ -27,7 +27,7 @@ const rows = [
   createData("Gingerbread", 356, 16.0, 49, 3.9),
 ]
 
-export default function CustomizedTable() {
+export default function CustomeTable() {
   const { t, i18n } = useTranslation()
   const arabicLang = i18n.language === "ar"
   const CustomTableCell = styled(TableCell)(({ theme }) => ({
