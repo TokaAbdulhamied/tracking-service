@@ -13,4 +13,24 @@
 
 .App {
   text-align: center;
+  font-size: "Cairo-Regular";
+}
+
+.main-wrapper {
+  padding-inline: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-wrapper > h4 {
+  font-size: 36px;
+  line-height: 56px;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  font-family: "Cairo-Medium";
+  @media only screen and (max-width: 768px) {
+    font-size: 28px;
+    line-height: 36px;
+  }
 }

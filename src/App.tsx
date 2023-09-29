@@ -3,6 +3,7 @@ import "./App.css"
 import { useTranslation } from "react-i18next"
 import CustomeTable from "Components/CustomeTable/CustomeTable"
 import CustomeStepper from "Components/CustomeStepper/CustomeStepper"
+import SearchInput from "Components/SearchInput/SearchInput"
 
 function App() {
   const { t } = useTranslation()
@@ -11,7 +12,7 @@ function App() {
   }
   const { i18n } = useTranslation()
   const [language, setLanguage] = React.useState("ar")
-
+  document.body.dir = i18n.dir()
   const handleLangChange = (evt: any) => {
     const lang = evt.target.value
     console.log(lang)
@@ -24,19 +25,19 @@ function App() {
         <option value="ar">AR</option>
         <option value="en">EN</option>
       </select>
-      <main>
-        <h1>title</h1>
-        <section>search input</section>
+
+      <main className="main-wrapper">
+        <h4>{t("search.title")}</h4>
+        <SearchInput className="lg-search" />
       </main>
-      <main style={{ paddingInline: "5rem" }}>
+      {/* <main className="main-wrapper">
         <CustomeStepper />
-        <main>
-          <section>
-            <CustomeTable />
-          </section>
-          <aside>asid</aside>
-        </main>
-      </main>
+
+        <section>
+          <CustomeTable />
+        </section>
+        <aside>asid</aside>
+      </main> */}
     </div>
   )
 }
