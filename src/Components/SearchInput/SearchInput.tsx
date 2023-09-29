@@ -2,7 +2,9 @@ import React, { useState, useTransition } from "react"
 import "./SearchInput.css"
 import SearchIcon from "@mui/icons-material/Search"
 import { Button, IconButton, InputAdornment, TextField } from "@mui/material"
-
+import { useDispatch, useSelector } from "react-redux"
+import { AppDispatch, RootState } from "Store/store"
+import { getShipmentsData } from "Store/ShipmentsReducer"
 import { useTranslation } from "react-i18next"
 type Props = {
   className?: string
@@ -10,6 +12,15 @@ type Props = {
 function SearchInput({ className }: Props) {
   const { t } = useTranslation()
   const [value, setValue] = useState("")
+  const dispatch = useDispatch<AppDispatch>()
+  const data = useSelector((state: RootState) => state.shipments.data)
+  const status = useSelector((state: RootState) => state.shipments.status)
+  const error = useSelector((state: RootState) => state.shipments.error)
+  console.log(data, status, error)
+  const handleSearch = () => {
+    dispatch(getShipmentsData("this"))
+    console.log(value)
+  }
 
   return (
     <span
@@ -23,6 +34,7 @@ function SearchInput({ className }: Props) {
         value={value}
       />
       <IconButton
+        onClick={handleSearch}
         sx={{
           borderRadius: "0px",
           backgroundColor: "#E30613",
