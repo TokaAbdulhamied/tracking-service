@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux"
 import { AppDispatch } from "Store/store"
 import { getShipmentsData } from "Store/ShipmentsMiddleware"
 import { useTranslation } from "react-i18next"
+import { clear } from "Store/ShipmentsReducer"
 type Props = {
   height?: string
   size?: string
@@ -16,7 +17,8 @@ function SearchInput({ height = "4rem", size = "3rem", className }: Props) {
   const [value, setValue] = useState("")
   const dispatch = useDispatch<AppDispatch>()
   const handleSearch = () => {
-    dispatch(getShipmentsData(value))
+    if (value === "") dispatch(clear())
+    else dispatch(getShipmentsData(value))
   }
 
   return (
