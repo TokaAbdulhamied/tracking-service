@@ -6,7 +6,7 @@ export type Data = {
   PromisedDate?: Date
   TransitEvents: Update[]
   CurrentStatus: Record<string, string>
-  step: { count: number; stepperState: string }
+  step: { count: number; stepperState: string; state: string }
   address: string
   merchantName: string
 }
@@ -22,7 +22,7 @@ const initialState: ShipmentsState = {
     PromisedDate: undefined,
     TransitEvents: [],
     CurrentStatus: {},
-    step: { count: 0, stepperState: "" },
+    step: { count: 0, stepperState: "", state: "" },
     address: "",
     merchantName: "",
   },

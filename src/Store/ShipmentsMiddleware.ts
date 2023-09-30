@@ -17,7 +17,7 @@ export const getShipmentsData = createAsyncThunk(
         CurrentStatus: response.data.CurrentStatus,
         address: "الشيخ زايد, الحي الاول, المجاورة التاسعة",
         merchantName: "Amazon.com",
-        step: { count: 0, stepperState: "" },
+        step: { count: 0, stepperState: "", state: "" },
       }
       let lastEvent: number = data?.TransitEvents?.length - 1
       let step = mapEventToStepp(data.TransitEvents[lastEvent])
