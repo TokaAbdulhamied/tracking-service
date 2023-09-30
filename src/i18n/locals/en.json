@@ -27,5 +27,6 @@
   "state.CANCELLED": "Cancelled",
   "problem": "having a problem with your shipment?",
   "problem.btn": "Report a problem",
-  "lang": "عربي"
+  "lang": "عربي",
+  "delivery.address": "Delivery Address"
 }

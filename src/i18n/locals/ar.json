@@ -19,13 +19,14 @@
   "shipment.id": "رقم الشحنة",
   "step.TICKET_CREATED": "تم إنشاء الشحنة",
   "step.PACKAGE_RECEIVED": "تم إستلام الشحنة من التاجر",
-  "step.DELIVERED": "تم التسليم",
   "step.OUT_FOR_DELIVERY": "الشحنة خرجت للتسليم",
+  "step.DELIVERED": "تم التسليم",
   "state.DELIVERED": "تم تسليم الشحنة",
   "state.WAITING_FOR_CUSTOMER_ACTION": "لم يتم تسليم الشحنة",
   "state.DELIVERED_TO_SENDER": "تم إعادة الشحنة للتاجر",
   "state.CANCELLED": "تم إلغاء الشحنة",
-  "problem": "هل لديك مشكلة مع الشحنة؟ ",
+  "problem": "هل يوجد مشكلة فى شحنتك؟",
   "problem.btn": "إبلاغ عن مشكلة",
-  "lang": "ENG"
+  "lang": "ENG",
+  "delivery.address": "عنوان التسليم"
 }

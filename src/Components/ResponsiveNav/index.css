@@ -24,7 +24,7 @@
 .track-btn {
   font-family: "Cairo-Bold" !important;
   margin-inline-end: 3px;
-  color: #000 !important;
+  color: #111619 !important;
   font-size: 18px !important;
   @media only screen and (max-width: 425px) {
     font-size: 16px !important;
