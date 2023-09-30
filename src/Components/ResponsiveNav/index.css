@@ -21,15 +21,27 @@
   color: #e30613;
 }
 
-.track-btn {
+.nav-btn {
   font-family: "Cairo-Bold" !important;
   margin-inline-end: 3px;
   color: #111619 !important;
-  font-size: 18px !important;
+  font-size: 16px !important;
   @media only screen and (max-width: 425px) {
     font-size: 16px !important;
   }
 }
-.track-btn:hover {
+.nav-btn:hover {
   background-color: #fff !important;
+  color: #e30613 !important;
+}
+
+.search-sm {
+  box-shadow: unset !important;
+}
+
+.search-tit {
+  font-family: "Cairo-Regular";
+  color: #475467;
+  margin-block-start: 0em;
+  margin-block-end: 1em;
 }
