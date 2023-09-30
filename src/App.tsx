@@ -4,44 +4,37 @@ import { useTranslation } from "react-i18next"
 import CustomeTable from "Components/CustomeTable/CustomeTable"
 import CustomeStepper from "Components/CustomeStepper/CustomeStepper"
 import CircularProgress from "@mui/material/CircularProgress"
-
 import SearchInput from "Components/SearchInput/SearchInput"
 import { useSelector } from "react-redux"
 import { RootState } from "Store/store"
+import SideSec from "Components/SideSec/SideSec"
+import TopNav from "Components/ResponsiveNav/TopNav"
+import { Update, getLastUpdates } from "utils"
 
 function App() {
   const { t, i18n } = useTranslation()
-  const data = useSelector((state: RootState) => state.shipments.data)
-  const status = useSelector((state: RootState) => state.shipments.status)
-  const error = useSelector((state: RootState) => state.shipments.error)
-  function changeLanguage(e: any) {
-    i18n.changeLanguage(e.target.value)
-  }
+  const { data, status, trackingId } = useSelector(
+    (state: RootState) => state.shipments
+  )
 
-  const [language, setLanguage] = React.useState("ar")
   document.body.dir = i18n.dir()
-  const handleLangChange = (evt: any) => {
-    const lang = evt.target.value
-    console.log(lang)
-    setLanguage(lang)
-    i18n.changeLanguage(lang)
-  }
+  let lastUpdates: Update[] = getLastUpdates(data.TransitEvents)
+  console.log(lastUpdates)
   return (
     <div className="App">
-      <select onChange={handleLangChange} value={language}>
-        <option value="ar">AR</option>
-        <option value="en">EN</option>
-      </select>
+      <TopNav />
       <main className="main-wrapper">
         {status !== "succeeded" ? (
           <>
             <h4>{t("search.title")}</h4>
             <SearchInput className="lg-search" />
-            {status === "loading" && <CircularProgress />}
+            {status === "loading" && (
+              <CircularProgress sx={{ marginTop: "1em" }} />
+            )}
             {status === "failed" && (
               <section>
-                <p>{t("shipment.id")}</p>
-                <p>{t("shipment.error")}</p>
+                <p className="id">{`${t("shipment.id")} ${trackingId}`}</p>
+                <div className="error">{t("shipment.error")}</div>
               </section>
             )}
           </>
@@ -49,8 +42,8 @@ function App() {
           <>
             <CustomeStepper />
             <section className="details-sec">
-              <CustomeTable />
-              <aside>asid</aside>
+              <CustomeTable data={lastUpdates} />
+              <SideSec />
             </section>
           </>
         )}

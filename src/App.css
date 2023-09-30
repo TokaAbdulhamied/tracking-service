@@ -10,10 +10,13 @@
   font-family: "Cairo-Medium";
   src: url("Assets/fonts/Cairo-Medium.ttf");
 }
-
+@font-face {
+  font-family: "Cairo-SemiBold";
+  src: url("Assets/fonts/Cairo-SemiBold.ttf");
+}
 .App {
   text-align: center;
-  font-family: "Cairo-Medium";
+  font-family: "Cairo-SemiBold";
   width: 100%;
   overflow-x: clip;
 }
@@ -33,14 +36,32 @@
   font-size: 36px;
   line-height: 56px;
   margin-block-start: 0em;
-  margin-block-end: 0em;
-  font-family: "Cairo-Medium";
+  margin-block-end: 1em;
+  font-family: "Cairo-Bold";
+  color: #111619;
   @media only screen and (max-width: 768px) {
     font-size: 28px;
     line-height: 36px;
   }
 }
-
+.id {
+  font-size: 17px;
+  color: #667085;
+}
+.error {
+  text-align: center;
+  margin-inline: auto;
+  font-family: "Cairo-Regular";
+  text-align: start;
+  padding: 16px;
+  background: #fef3f2;
+  border: 1px solid #fecdca;
+  border-radius: 4px;
+  max-width: 60%;
+  @media only screen and (max-width: 768px) {
+    max-width: 100%;
+  }
+}
 .details-sec {
   width: 100%;
   display: flex;
