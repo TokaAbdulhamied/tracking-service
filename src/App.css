@@ -13,7 +13,7 @@
 
 .App {
   text-align: center;
-  font-size: "Cairo-Regular";
+  font-family: "Cairo-Medium";
 }
 
 .main-wrapper {
@@ -47,5 +47,4 @@
 
 aside {
   flex: 30%;
-  background-color: red;
 }
