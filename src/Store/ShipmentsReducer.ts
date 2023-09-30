@@ -1,16 +1,10 @@
-import {
-  createSlice,
-  createAsyncThunk,
-  PayloadAction,
-  Action,
-  ActionCreator,
-} from "@reduxjs/toolkit"
+import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import axios, { AxiosError } from "axios"
 import { getShipmentsData } from "./ShipmentsMiddleware"
 export type Data = {
-  PromisedDate: object
+  PromisedDate?: Date
   TransitEvents: object[]
-  CurrentStatus: object
+  CurrentStatus: Record<string, string>
   step: { count: number; stepperState: string }
   address: string
   merchantName: string
@@ -24,7 +18,7 @@ interface ShipmentsState {
 
 const initialState: ShipmentsState = {
   data: {
-    PromisedDate: {},
+    PromisedDate: undefined,
     TransitEvents: [],
     CurrentStatus: {},
     step: { count: 0, stepperState: "" },

@@ -1,7 +1,7 @@
 import LocalShippingIcon from "@mui/icons-material/LocalShipping"
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag"
 import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn"
-import { StepIconProps, styled } from "@mui/material"
+import { Box, StepIconProps, styled } from "@mui/material"
 import Check from "@mui/icons-material/Check"
 import { useSelector } from "react-redux"
 import { RootState } from "Store/store"
@@ -20,16 +20,19 @@ const CustomStepIconRoot = styled("div")<{
       theme.palette.mode === "dark" ? theme.palette.grey[700] : "#ccc",
     zIndex: 1,
     color: "#fff",
-    width: 50,
-    height: 50,
     display: "flex",
     borderRadius: "50%",
     justifyContent: "center",
     alignItems: "center",
+    width: "50px",
+    height: "50px",
     ...(ownerState.active && {
       backgroundColor: colors[step.stepperState],
     }),
     ...(ownerState.completed && {
+      marginTop: "8px",
+      width: "30px",
+      height: "30px",
       backgroundColor: colors[step.stepperState],
     }),
   }
@@ -46,15 +49,17 @@ export function CustomStepIcon(props: StepIconProps) {
   }
 
   return (
-    <CustomStepIconRoot
-      ownerState={{ completed, active }}
-      className={className}
-    >
-      {completed ? (
-        <Check className="QontoStepIcon-completedIcon" />
-      ) : (
-        icons[String(props.icon)]
-      )}
-    </CustomStepIconRoot>
+    <Box sx={{ width: "50px", height: "50px", zIndex: 1 }}>
+      <CustomStepIconRoot
+        ownerState={{ completed, active }}
+        className={className}
+      >
+        {completed ? (
+          <Check className="QontoStepIcon-completedIcon" />
+        ) : (
+          icons[String(props.icon)]
+        )}
+      </CustomStepIconRoot>
+    </Box>
   )
 }

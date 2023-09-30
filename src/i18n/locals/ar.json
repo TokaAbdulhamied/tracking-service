@@ -13,5 +13,16 @@
   "search.title": "تتبع شحنتك",
   "search.placeholder": "رقم التتبع",
   "shipment.error": "لا يمكن العثور على أي سجل لرقم التتبع هذا في الوقت الحالي ، يرجى التحقق من الرقم والمحاولة مرة أخرى لاحقًا. لمزيد من المساعدة ، يرجى التواصل بخدمة العملاء.",
-  "shipment.id": "رقم الشحنة"
+  "shipment.lastUpdate": "اخر تحديث",
+  "shipment.promisedDate": "موعد التسليم خلال",
+  "shipment.merchantName": "اسم التاجر",
+  "shipment.id": "رقم الشحنة",
+  "step.TICKET_CREATED": "تم إنشاء الشحنة",
+  "step.PACKAGE_RECEIVED": "تم إستلام الشحنة من التاجر",
+  "step.DELIVERED": "تم التسليم",
+  "step.OUT_FOR_DELIVERY": "الشحنة خرجت للتسليم",
+  "state.DELIVERED": "تم تسليم الشحنة",
+  "state.WAITING_FOR_CUSTOMER_ACTION": "لم يتم تسليم الشحنة",
+  "state.DELIVERED_TO_SENDER": "تم إعادة الشحنة للتاجر",
+  "state.CANCELLED": "تم إلغاء الشحنة"
 }

@@ -18,8 +18,8 @@ export const CustomConnector = styled(StepConnector)(({ theme }) => {
   return {
     [`&.${stepConnectorClasses.alternativeLabel}`]: {
       top: 22,
-      left: `calc(${arabic ? "50%" : "-50%"} + 20px)`,
-      right: `calc(${arabic ? "-50%" : "50%"} + 20px)`,
+      left: `calc(${arabic ? "50%" : "-50%"})`,
+      right: `calc(${arabic ? "-50%" : "50%"})`,
     },
     [`&.${stepConnectorClasses.active}`]: {
       [`& .${stepConnectorClasses.line}`]: {

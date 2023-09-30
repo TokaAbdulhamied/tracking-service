@@ -13,5 +13,16 @@
   "search.title": "Track your shipment",
   "search.placeholder": "Tracking No.",
   "shipment.error": "No record of this tracking number can be found at this time, please check the number and try again later. For further assistance, please contact Customer Service.",
-  "shipment.id": "Shipment No. "
+  "shipment.id": "Shipment No. ",
+  "shipment.lastUpdate": "Last Update",
+  "shipment.promisedDate": "Promised Date",
+  "shipment.merchantName": "Merchant Name",
+  "step.TICKET_CREATED": "Ticket Created",
+  "step.PACKAGE_RECEIVED": "Package Received",
+  "step.DELIVERED": "Delivered",
+  "step.OUT_FOR_DELIVERY": "Out For Delivery",
+  "state.DELIVERED": "Delivered",
+  "state.WAITING_FOR_CUSTOMER_ACTION": "Not Delivered",
+  "state.DELIVERED_TO_SENDER": "Delivered To Sender",
+  "state.CANCELLED": "Cancelled"
 }

@@ -1,4 +1,4 @@
-import { Stack, Step, StepLabel, Stepper } from "@mui/material"
+import { Box, Stack, Step, StepLabel, Stepper } from "@mui/material"
 import { steps } from "./utils"
 import { CustomStepIcon } from "./CustomStepIcon"
 import { CustomConnector } from "./CustomConnector"
@@ -7,20 +7,19 @@ import { RootState } from "Store/store"
 import { useEffect, useState } from "react"
 import { mapEventToStepp } from "utils"
 import Divider from "@mui/material/Divider"
-
+import { useTranslation } from "react-i18next"
+import dayjs from "dayjs"
+import "dayjs/locale/ar"
+import "./index.css"
 export default function CustomeStepper() {
   const data = useSelector((state: RootState) => state.shipments.data)
-  // const [step, setStep] = useState({ count: -1 })
-  // useEffect(() => {
-  //   let lastEvent: number = data?.TransitEvents?.length - 1
-  //   let step = mapEventToStepp(data.TransitEvents[lastEvent])
-  //   if (step.count === -1 && step.state === "CANCELLED") {
-  //     let laststep = mapEventToStepp(data.TransitEvents[lastEvent - 1])
-  //     step = { ...step, count: laststep.count, stepperState: "error" }
-  //   }
-  //   setStep(step)
-  //   console.log(step, "step")
-  // }, [])
+  const trackingId = useSelector(
+    (state: RootState) => state.shipments.trackingId
+  )
+
+  const { t, i18n } = useTranslation()
+  console.log(i18n.language)
+  dayjs.locale(i18n.language)
 
   return (
     <Stack
@@ -28,14 +27,31 @@ export default function CustomeStepper() {
         width: "100%",
         border: "1px solid #e4e7ec",
         borderRadius: "6px",
+        paddingBottom: "1rem",
       }}
       spacing={4}
     >
       <Stack direction="row" justifyContent="space-between">
-        <p style={{ flex: 1 }}> this</p>
-        <p style={{ flex: 1 }}>this</p>
-        <p style={{ flex: 1 }}>this</p>
-        <p style={{ flex: 1 }}>this</p>
+        <Stack sx={{ flex: 1 }}>
+          <p className="sm-title">{`${t("shipment.id")}    ${trackingId}`}</p>
+          <p></p>
+        </Stack>
+        <Stack sx={{ flex: 1 }}>
+          <p className="sm-title"> {t("shipment.lastUpdate")}</p>
+          <p>
+            {dayjs(data.CurrentStatus?.timestamp).format(
+              "dddd DD/MM/YYYY hh:mm a"
+            )}
+          </p>
+        </Stack>
+        <Stack sx={{ flex: 1 }}>
+          <p className="sm-title"> {t("shipment.merchantName")}</p>
+          <p>{data.merchantName}</p>
+        </Stack>
+        <Stack sx={{ flex: 1 }}>
+          <p className="sm-title"> {t("shipment.promisedDate")} </p>
+          <p> {dayjs(data.PromisedDate).format("DD MMMM YYYY")}</p>
+        </Stack>
       </Stack>
       <Divider />
       <Stepper
@@ -45,7 +61,7 @@ export default function CustomeStepper() {
       >
         {steps.map((label) => (
           <Step key={label}>
-            <StepLabel StepIconComponent={CustomStepIcon}>{label}</StepLabel>
+            <StepLabel StepIconComponent={CustomStepIcon}>{t(label)}</StepLabel>
           </Step>
         ))}
       </Stepper>
