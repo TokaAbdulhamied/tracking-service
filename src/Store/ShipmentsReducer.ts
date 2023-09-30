@@ -1,27 +1,40 @@
-import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit"
+import {
+  createSlice,
+  createAsyncThunk,
+  PayloadAction,
+  Action,
+  ActionCreator,
+} from "@reduxjs/toolkit"
 import axios, { AxiosError } from "axios"
-
+import { getShipmentsData } from "./ShipmentsMiddleware"
+export type Data = {
+  PromisedDate: object
+  TransitEvents: object[]
+  CurrentStatus: object
+  step: { count: number; stepperState: string }
+  address: string
+  merchantName: string
+}
 interface ShipmentsState {
-  data: any[]
+  data: Data
+  trackingId?: string
   status: "idle" | "loading" | "succeeded" | "failed"
   error: string | null
 }
 
 const initialState: ShipmentsState = {
-  data: [],
+  data: {
+    PromisedDate: {},
+    TransitEvents: [],
+    CurrentStatus: {},
+    step: { count: 0, stepperState: "" },
+    address: "",
+    merchantName: "",
+  },
   status: "idle",
   error: null,
+  trackingId: undefined,
 }
-
-export const getShipmentsData = createAsyncThunk(
-  "shipments/getShipmentsData",
-  async (trackingId: string) => {
-    const response = await axios.get(
-      `https://tracking.bosta.co/shipments/track/${trackingId}`
-    )
-    return response.data
-  }
-)
 
 const shipmentsSlice = createSlice({
   name: "shipments",
@@ -29,23 +42,27 @@ const shipmentsSlice = createSlice({
   reducers: {},
   extraReducers: (builder: any) => {
     builder
-      .addCase(getShipmentsData.pending, (state: ShipmentsState) => {
-        state.status = "loading"
-      })
+      .addCase(
+        getShipmentsData.pending,
+        (
+          state: ShipmentsState,
+          action: PayloadAction<string> & { meta: { arg: string } }
+        ) => {
+          state.status = "loading"
+          state.trackingId = action.meta.arg
+        }
+      )
       .addCase(
         getShipmentsData.fulfilled,
-        (state: ShipmentsState, action: PayloadAction<any[]>) => {
+        (state: ShipmentsState, action: PayloadAction<Data>) => {
           state.status = "succeeded"
-          state.data = action.payload
+          state.data = action?.payload
         }
       )
-      .addCase(
-        getShipmentsData.rejected,
-        (state: ShipmentsState, action: any) => {
-          state.status = "failed"
-          state.error = action?.error.message
-        }
-      )
+      .addCase(getShipmentsData.rejected, (state: ShipmentsState) => {
+        state.status = "failed"
+        state.error = "error :'D "
+      })
   },
 })
 

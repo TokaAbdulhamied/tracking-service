@@ -11,5 +11,7 @@
   "nav.track": "Track Shipment",
   "nav.signin": "Sign In",
   "search.title": "Track your shipment",
-  "search.placeholder": "Tracking No."
+  "search.placeholder": "Tracking No.",
+  "shipment.error": "No record of this tracking number can be found at this time, please check the number and try again later. For further assistance, please contact Customer Service.",
+  "shipment.id": "Shipment No. "
 }

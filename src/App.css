@@ -21,6 +21,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media only screen and (max-width: 768px) {
+    padding-inline: 1rem;
+  }
 }
 
 .main-wrapper > h4 {
@@ -33,4 +36,16 @@
     font-size: 28px;
     line-height: 36px;
   }
+}
+
+.details-sec {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
+aside {
+  flex: 30%;
+  background-color: red;
 }
