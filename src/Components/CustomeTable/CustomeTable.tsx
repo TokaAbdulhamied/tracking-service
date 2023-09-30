@@ -13,19 +13,15 @@ import { Box } from "@mui/material"
 import dayjs from "dayjs"
 import { Update } from "utils"
 import "dayjs/locale/ar"
-import { useSelector } from "react-redux"
-import { RootState } from "Store/store"
 
 export default function CustomeTable({ data }: { data: Update[] }) {
-  const { t, i18n } = useTranslation()
-  // const arabicLang = i18n.language === "ar"
+  const { t } = useTranslation()
   const CustomTableCell = styled(TableCell)(({ theme }) => ({
     "&.MuiTableCell-root": {
       textAlign: "start",
       fontFamily: "Cairo-Regular",
     },
   }))
-  const step = useSelector((state: RootState) => state.shipments.data.step)
 
   return (
     <Box sx={{ width: " 100% " }}>

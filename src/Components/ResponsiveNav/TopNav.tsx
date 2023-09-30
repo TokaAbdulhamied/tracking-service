@@ -8,7 +8,7 @@ import {
   Toolbar,
   useMediaQuery,
 } from "@mui/material"
-import React, { useState, useTransition } from "react"
+import React, { useState } from "react"
 import logo from "../../Assets/Logos/logo.svg"
 import EngLogo from "../../Assets/Logos/EngLogo.svg"
 import { t } from "i18next"
@@ -52,9 +52,9 @@ const TopNav = () => {
             }}
           >
             {i18n.language === "ar" ? (
-              <img src={logo} alt="logo" width={120} height={36} />
+              <img src={logo} alt="ar-bosta" width={120} height={36} />
             ) : (
-              <img src={EngLogo} alt="logo" width={120} height={36} />
+              <img src={EngLogo} alt="bosta" width={120} height={36} />
             )}
           </Box>
           <Box
@@ -73,9 +73,9 @@ const TopNav = () => {
               component="nav"
               aria-labelledby="main navigation"
             >
-              {navLinks.map((link) => (
+              {navLinks.map((link, index) => (
                 <>
-                  <ListItem className="list-item">
+                  <ListItem className="list-item" key={index}>
                     <ListItemText
                       primary={t(link)}
                       primaryTypographyProps={{

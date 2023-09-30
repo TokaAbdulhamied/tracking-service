@@ -1,11 +1,9 @@
-import { Box, Stack, Step, StepLabel, Stepper } from "@mui/material"
+import { Stack, Step, StepLabel, Stepper } from "@mui/material"
 import { colors, steps } from "./utils"
 import { CustomStepIcon } from "./CustomStepIcon"
 import { CustomConnector } from "./CustomConnector"
 import { useSelector } from "react-redux"
 import { RootState } from "Store/store"
-import { useEffect, useState } from "react"
-import { mapEventToStepp } from "utils"
 import Divider from "@mui/material/Divider"
 import { useTranslation } from "react-i18next"
 import dayjs from "dayjs"
@@ -20,7 +18,6 @@ export default function CustomeStepper() {
   )
 
   const { t, i18n } = useTranslation()
-  console.log(i18n.language)
   dayjs.locale(i18n.language)
 
   return (

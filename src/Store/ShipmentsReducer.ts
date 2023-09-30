@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import axios, { AxiosError } from "axios"
 import { getShipmentsData } from "./ShipmentsMiddleware"
 import { Update } from "utils"
 export type Data = {

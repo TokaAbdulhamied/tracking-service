@@ -26,8 +26,6 @@ export const getShipmentsData = createAsyncThunk(
         step = { ...step, count: laststep.count, stepperState: "error" }
       }
       data.step = step
-      console.log(step, "step")
-      console.log(data)
       return data
     } catch (err) {
       return rejectWithValue(err)

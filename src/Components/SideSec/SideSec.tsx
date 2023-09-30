@@ -34,7 +34,7 @@ export default function SideSec() {
           marginTop: "1rem",
         }}
       >
-        <img src={sideImg} height={"100px"} width={"150px"} />
+        <img src={sideImg} height={"100px"} width={"150px"} alt="side" />
         <Stack>
           <p style={{ fontFamily: "Cairo-Bold", fontSize: "13px" }}>
             {t("problem")}

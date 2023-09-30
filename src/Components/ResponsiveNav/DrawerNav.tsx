@@ -52,9 +52,9 @@ export default function DrawerNav() {
             }}
           >
             {i18n.language === "ar" ? (
-              <img src={logo} alt="logo" width={120} height={36} />
+              <img src={logo} alt="bosta" width={120} height={36} />
             ) : (
-              <img src={EngLogo} alt="logo" width={120} height={36} />
+              <img src={EngLogo} alt="ar-bosta" width={120} height={36} />
             )}
           </Box>
           <Button disableRipple onClick={openPopover} className="nav-btn">
@@ -85,10 +85,15 @@ export default function DrawerNav() {
       </AppBar>
       <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer}>
         <List>
-          {navLinks.map((link) => (
+          {navLinks.map((link, index) => (
             <>
-              <ListItem onClick={toggleDrawer} className="list-item">
+              <ListItem
+                onClick={toggleDrawer}
+                className="list-item"
+                key={index}
+              >
                 <ListItemText
+                  key={index + "item"}
                   primaryTypographyProps={{
                     sx: {
                       fontSize: 16,
