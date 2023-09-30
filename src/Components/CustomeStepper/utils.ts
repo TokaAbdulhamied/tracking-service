@@ -1,6 +1,6 @@
 export const steps = [
-  "تم انشاء الشحنة",
-  "تم استلام الشحنة من التاجر",
-  "الشحنة خرجت للتسليم",
-  "تم التسليم",
+  "step.TICKET_CREATED",
+  "step.PACKAGE_RECEIVED",
+  "step.OUT_FOR_DELIVERY",
+  "step.DELIVERED",
 ]
