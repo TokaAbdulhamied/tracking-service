@@ -81,5 +81,8 @@ export function getLastUpdates(data: Update[]) {
     }
   }
   const result = Object.values(lastUpdates)
+  if (result.length < 4) {
+    result.push(data[data.length - 1])
+  }
   return result
 }
