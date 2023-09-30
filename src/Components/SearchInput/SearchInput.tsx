@@ -7,9 +7,11 @@ import { AppDispatch, RootState } from "Store/store"
 import { getShipmentsData } from "Store/ShipmentsMiddleware"
 import { useTranslation } from "react-i18next"
 type Props = {
+  height?: string
+  size?: string
   className?: string
 }
-function SearchInput({ className }: Props) {
+function SearchInput({ height = "4rem", size = "3rem", className }: Props) {
   const { t } = useTranslation()
   const [value, setValue] = useState("")
   const dispatch = useDispatch<AppDispatch>()
@@ -19,7 +21,7 @@ function SearchInput({ className }: Props) {
 
   return (
     <span
-      // style={{ height: "3rem" }}
+      style={{ height: height }}
       className={`search-input-container ${className}`}
     >
       <input
@@ -37,13 +39,13 @@ function SearchInput({ className }: Props) {
           borderEndEndRadius: "10px",
           border: "1px solid #E30613",
           height: "100%",
-          padding: "4px 15px",
+          // padding: "4px 15px",
           ":hover": {
             backgroundColor: "#E30613",
           },
         }}
       >
-        <SearchIcon sx={{ fontSize: "3rem", color: "#fff" }} />
+        <SearchIcon sx={{ color: "#fff", fontSize: size }} />
       </IconButton>
     </span>
   )

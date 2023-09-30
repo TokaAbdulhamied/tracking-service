@@ -1,22 +1,18 @@
 .search-input-container {
   display: flex;
   align-items: center;
-  margin: 20px;
   box-shadow: 0 2px 4px rgba(29, 41, 57, 0.05), 0 4px 16px rgba(29, 41, 57, 0.1);
   border-radius: 10px;
   max-width: 455px;
   width: 100%;
 }
 
-.search-input-container.searching {
-  background-color: red;
-}
-
 input {
   border: 1px solid #e4e7ec;
   height: 100%;
   flex: 1;
-  padding: 20px;
+  padding-inline-start: 16px;
+  /* padding: 20px; */
   box-sizing: border-box;
   border-start-start-radius: 10px;
   border-end-start-radius: 10px;
@@ -33,4 +29,8 @@ input {
 
 input:focus {
   border-color: #40a9ff;
+}
+
+input::placeholder {
+  padding-inline-start: 4px;
 }
