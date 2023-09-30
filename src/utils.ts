@@ -58,3 +58,24 @@ export function mapEventToStepp(event: any) {
 // 7234258
 // 13737343
 // 67151313
+
+export function getLastUpdates(data: Record<string, string>[]) {
+  const lastUpdates: any = {}
+  const targetStates = [
+    "DELIVERED",
+    "OUT_FOR_DELIVERY",
+    "PACKAGE_RECEIVED",
+    "TICKET_CREATED",
+  ]
+
+  for (const item of data) {
+    const { state, timestamp } = item
+    if (targetStates.includes(state)) {
+      if (!lastUpdates[state] || timestamp > lastUpdates[state].timestamp) {
+        lastUpdates[state] = item
+      }
+    }
+  }
+  const result = Object.values(lastUpdates)
+  return result
+}
