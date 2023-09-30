@@ -6,15 +6,11 @@ import Check from "@mui/icons-material/Check"
 import { useSelector } from "react-redux"
 import { RootState } from "Store/store"
 import QuestionMarkIcon from "@mui/icons-material/QuestionMark"
+import { colors } from "./utils"
 const CustomStepIconRoot = styled("div")<{
   ownerState: { completed?: boolean; active?: boolean }
 }>(({ theme, ownerState }) => {
   const step = useSelector((state: RootState) => state.shipments.data.step)
-  const colors: Record<string, string> = {
-    error: "#e30613",
-    active: "#36b600",
-    warning: "#f9ba02",
-  }
   return {
     backgroundColor:
       theme.palette.mode === "dark" ? theme.palette.grey[700] : "#ccc",
@@ -30,9 +26,10 @@ const CustomStepIconRoot = styled("div")<{
       backgroundColor: colors[step.stepperState],
     }),
     ...(ownerState.completed && {
-      marginTop: "8px",
-      width: "30px",
-      height: "30px",
+      marginTop: "11px",
+      width: "26px",
+      height: "26px",
+
       backgroundColor: colors[step.stepperState],
     }),
   }
