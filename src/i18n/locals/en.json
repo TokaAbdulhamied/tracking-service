@@ -24,5 +24,8 @@
   "state.DELIVERED": "Delivered",
   "state.WAITING_FOR_CUSTOMER_ACTION": "Not Delivered",
   "state.DELIVERED_TO_SENDER": "Delivered To Sender",
-  "state.CANCELLED": "Cancelled"
+  "state.CANCELLED": "Cancelled",
+  "problem": "having a problem with your shipment?",
+  "problem.btn": "Report a problem",
+  "lang": "ENG"
 }

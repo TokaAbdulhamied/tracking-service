@@ -11,6 +11,9 @@ import { ThemeProvider, createTheme } from "@mui/material"
 const theme = createTheme({
   typography: {
     fontFamily: "Cairo-Meduim",
+    button: {
+      textTransform: "none",
+    },
   },
 })
 

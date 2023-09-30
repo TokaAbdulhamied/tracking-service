@@ -1,0 +1,35 @@
+.app-bar {
+  background-color: #fff !important;
+  border-bottom: 1px solid #e4e7ec;
+  padding-inline: 5rem;
+  @media only screen and (max-width: 768px) {
+    padding-inline: 1rem;
+  }
+}
+
+.list-item {
+  font-family: "Cairo-Bold";
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #000;
+  cursor: pointer;
+}
+
+.list-item:hover {
+  text-decoration: underline;
+  color: #e30613;
+}
+
+.track-btn {
+  font-family: "Cairo-Bold" !important;
+  margin-inline-end: 3px;
+  color: #000 !important;
+  font-size: 18px !important;
+  @media only screen and (max-width: 425px) {
+    font-size: 16px !important;
+  }
+}
+.track-btn:hover {
+  background-color: #fff !important;
+}

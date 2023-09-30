@@ -24,5 +24,8 @@
   "state.DELIVERED": "تم تسليم الشحنة",
   "state.WAITING_FOR_CUSTOMER_ACTION": "لم يتم تسليم الشحنة",
   "state.DELIVERED_TO_SENDER": "تم إعادة الشحنة للتاجر",
-  "state.CANCELLED": "تم إلغاء الشحنة"
+  "state.CANCELLED": "تم إلغاء الشحنة",
+  "problem": "هل لديك مشكلة مع الشحنة؟ ",
+  "problem.btn": "إبلاغ عن مشكلة",
+  "lang": "عربي"
 }
