@@ -16,10 +16,9 @@ function App() {
   const { data, status, trackingId } = useSelector(
     (state: RootState) => state.shipments
   )
-
   document.body.dir = i18n.dir()
   let lastUpdates: Update[] = getLastUpdates(data.TransitEvents)
-  console.log(lastUpdates)
+
   return (
     <div className="App">
       <TopNav />

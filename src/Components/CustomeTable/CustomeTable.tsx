@@ -13,6 +13,8 @@ import { Box } from "@mui/material"
 import dayjs from "dayjs"
 import { Update } from "utils"
 import "dayjs/locale/ar"
+import { useSelector } from "react-redux"
+import { RootState } from "Store/store"
 
 export default function CustomeTable({ data }: { data: Update[] }) {
   const { t, i18n } = useTranslation()
@@ -20,9 +22,11 @@ export default function CustomeTable({ data }: { data: Update[] }) {
   const CustomTableCell = styled(TableCell)(({ theme }) => ({
     "&.MuiTableCell-root": {
       textAlign: "start",
+      fontFamily: "Cairo-Regular",
     },
   }))
-  dayjs.locale(i18n.language)
+  const step = useSelector((state: RootState) => state.shipments.data.step)
+
   return (
     <Box sx={{ width: " 100% " }}>
       <p style={{ textAlign: "start" }}>تفاصيل الشحنة</p>
@@ -64,7 +68,7 @@ export default function CustomeTable({ data }: { data: Update[] }) {
                 <CustomTableCell>
                   {dayjs(row.timestamp).format("hh:mm  a ")}
                 </CustomTableCell>
-                <CustomTableCell>{t(`step.${row.state}`)}</CustomTableCell>
+                <CustomTableCell>{t(`state.${row.state}`)}</CustomTableCell>
               </TableRow>
             ))}
           </TableBody>

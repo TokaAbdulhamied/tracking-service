@@ -1,5 +1,6 @@
 .header-cell {
   color: var(--grey) !important;
+  font-family: "Cairo-Bold" !important;
 }
 .body-cell {
 }

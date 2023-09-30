@@ -13,13 +13,14 @@ export default function SideSec() {
       <p style={{ textAlign: "start" }}>{t("delivery.address")}</p>
       <Box
         sx={{
-          color: "#475467;",
+          color: "#475467",
           fontSize: "16px",
           fontFamily: "Cairo-Regular",
           backgroundColor: "#fafafa",
           border: "1px solid #e4e7ec",
           padding: "1rem",
           borderRadius: "5px",
+          justifyContent: "space-evenly",
         }}
       >
         {data.address}
