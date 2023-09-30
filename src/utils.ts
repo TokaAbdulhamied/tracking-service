@@ -58,9 +58,13 @@ export function mapEventToStepp(event: any) {
 // 7234258
 // 13737343
 // 67151313
-
-export function getLastUpdates(data: Record<string, string>[]) {
-  const lastUpdates: any = {}
+export interface Update {
+  state: string
+  timestamp: string
+  hub: string
+}
+export function getLastUpdates(data: Update[]) {
+  const lastUpdates: Record<string, Update> = {}
   const targetStates = [
     "DELIVERED",
     "OUT_FOR_DELIVERY",

@@ -4,7 +4,7 @@
   "table.date": "Date",
   "table.time": "Time",
   "table.details": "Details",
-  "nav.bosta": "Bosta",
+  "bosta": "Bosta",
   "nav.main": "Home",
   "nav.sales": "Call Sales",
   "nav.prices": "Pricing",
@@ -27,5 +27,5 @@
   "state.CANCELLED": "Cancelled",
   "problem": "having a problem with your shipment?",
   "problem.btn": "Report a problem",
-  "lang": "ENG"
+  "lang": "عربي"
 }

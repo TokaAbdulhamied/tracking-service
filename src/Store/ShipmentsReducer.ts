@@ -1,9 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import axios, { AxiosError } from "axios"
 import { getShipmentsData } from "./ShipmentsMiddleware"
+import { Update } from "utils"
 export type Data = {
   PromisedDate?: Date
-  TransitEvents: object[]
+  TransitEvents: Update[]
   CurrentStatus: Record<string, string>
   step: { count: number; stepperState: string }
   address: string
